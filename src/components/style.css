@@ -1,0 +1,6 @@
+.characterDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 9px #999, 0 6px 9px #999;
+}

@@ -1,0 +1,19 @@
+
+.jumbotron.jumbotron-fluid {
+    margin-bottom: 0px;
+    background-image: url("https://wallpaperplay.com/walls/full/7/f/4/47283.jpg");
+    opacity: .75;
+    text-align: center;
+}
+#navbar {
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+#correctGuess {
+    margin: auto;
+}
+#scoreDiv {
+    float: right;
+}
+#navbarText {
+    float: right;
+}

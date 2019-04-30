@@ -5,7 +5,7 @@ import GameContainer from "./components/GameContainer"
 function App() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light" id = "navbar">
         <span className="navbar-brand">Clicky Game</span>
         <div className="collapse navbar-collapse" id="navbarText">
           <div id="userGuess">
