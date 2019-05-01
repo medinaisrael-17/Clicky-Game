@@ -7,17 +7,45 @@ import "./style.css"
 class GameContainer extends Component {
     state = {
         characters,
-        score: 0
+        score: 0,
+        topScore: 0
     };
 
+    // determining if the id has been clicked on
     anotherFunction = id => {
-        // determining if the id has been clicked on
-            // if it has, the user lost. reset the score, and shuffle
-                //reset all to false
-            // if not, increase the score and shuffle
-                //change to true
-        const shuffledArr = this.shuffle(this.state.characters);
-        this.setState({ score: this.state.score + 1, characters: shuffledArr });
+        // if it has 
+        if (this.state.characters[id].clicked === true) {
+            //shuffle
+            const shuffledArr = this.shuffle(this.state.characters);
+
+            if (this.state.score > this.state.topScore){
+                this.setState({topScore: this.state.score});
+                // document.getElementById("topScore").text(this.state.topScore)
+            }
+            
+
+            //reset all to false
+            shuffledArr.map( i => i.clicked = false)
+            //the user lost and we need to change our state
+            this.setState({ score: 0 , characters: shuffledArr });
+            // document.getElementById("currentScore").text(this.state.score)
+
+            alert("You lost :-(")
+        }
+        // if not 
+        if (this.state.characters[id].clicked === false) {
+            const copy = [...characters]
+
+            copy[id].clicked = true
+            // shuffle
+            const shuffledArr = this.shuffle(copy);
+            //increase the score
+            this.setState({ score: this.state.score + 1, characters: shuffledArr });
+
+            // document.getElementById("currentScore").text(this.state.score)
+        }
+        // const shuffledArr = this.shuffle(this.state.characters);
+        // this.setState({ score: this.state.score + 1, characters: shuffledArr });
     }
 
     shuffle = array => {
